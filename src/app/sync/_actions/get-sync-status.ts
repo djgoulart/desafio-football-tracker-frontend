@@ -11,7 +11,7 @@ type SyncStatusResponse = {
 
 export async function getSyncStatus(): Promise<SyncStatusResponse> {
   noStore()
-  const result = await fetch('http://localhost:5555/sync/status', {
+  const result = await fetch(`${process.env.BACKEND_URL!}/sync/status`, {
     next: {
       tags: ['sync-status'],
     },

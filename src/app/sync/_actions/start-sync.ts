@@ -8,7 +8,7 @@ type StartSyncResponse = {
 
 export async function startSync(): Promise<StartSyncResponse> {
   noStore()
-  const result = await fetch('http://localhost:5555/sync/start', {
+  const result = await fetch(`${process.env.BACKEND_URL!}/sync/start`, {
     cache: 'no-cache',
   })
 

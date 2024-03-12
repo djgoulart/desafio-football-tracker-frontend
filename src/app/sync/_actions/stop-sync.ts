@@ -9,7 +9,7 @@ type StopSyncResponse = {
 export async function stopSync(): Promise<StopSyncResponse> {
   noStore()
 
-  const result = await fetch('http://localhost:5555/sync/stop', {
+  const result = await fetch(`${process.env.BACKEND_URL!}/sync/stop`, {
     cache: 'no-cache',
   })
 

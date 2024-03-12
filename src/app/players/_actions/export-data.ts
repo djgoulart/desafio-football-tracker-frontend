@@ -8,7 +8,7 @@ type ExportResponse = {
 
 export async function exportData(): Promise<ExportResponse> {
   noStore()
-  const result = await fetch('http://localhost:5555/export', {
+  const result = await fetch(`${process.env.BACKEND_URL!}/export`, {
     cache: 'no-cache',
   })
 
