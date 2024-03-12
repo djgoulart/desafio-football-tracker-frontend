@@ -13,6 +13,7 @@ import { ToastAction } from '@/components/ui/toast'
 import { useToast } from '@/components/ui/use-toast'
 import { MouseEvent, useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { exportData } from '@/app/players/_actions/export-data'
 
 export function ExportAlert() {
   const [loading, setLoading] = useState(false)
@@ -23,7 +24,7 @@ export function ExportAlert() {
     e.preventDefault()
     if (!loading) {
       setLoading(true)
-      // await exportData()
+      await exportData()
 
       toast({
         title: 'Exportação iniciada',
