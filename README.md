@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Desafio Football Tracker - Frontend
 
-First, run the development server:
+O desafio consiste em desenvolver uma aplicação para gerenciar um programa de recompensas gamificado para um determinado público alvo. Nesse caso, os jogadores de futebol listados em uma API: [API-FOOTBALL](https://dashboard.api-football.com/). 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Cada Jogador recebe pontos com base em alguns critérios.
+- 1 ponto por cada ``GOL`` realizado na temporada (2020)
+- 1 ponto por cada ``ASSISTÊNCIA`` realizada na temporada (2020)
+- 5 pontos por cada participação em ``EVENTOS PRESENCIAIS``.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Os eventos presenciais serão registrados na aplicação que será construída.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Os jogadores ganharão "níveis" com base em usa pontuação.
+- Jogadores com menos de ``15`` pontos são ``bronze``.
+- Jogadores com pontuação ``entre 15 e 29`` são ``prata``.
+- Jogadores com ``30 pontos ou mais`` são ``ouro``
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Entregáveis do Desafio
+- [Frontend ](https://github.com/djgoulart/desafio-football-tracker-frontend): Aplicação para gerenciar as informações
+- [Backend](https://github.com/djgoulart/desafio-football-tracker-backend): Uma api construída para cuidar da sincronização e exportação dos dados
+- [AppSheet](https://www.appsheet.com/template/mobilepreview?appId=31b60ea4-be47-47da-bcff-f0baa15af8ff) Um aplicativo low code para demonstração das informações
+- [Google Sheet](https://docs.google.com/spreadsheets/d/1RgNmoyI4uJPZILHdnt6buvAPiqtVAOciJe1W7oMcSCM/edit?usp=sharing) Uma planilha do google para onde os dados são exportados.
 
-## Learn More
+## Solução do desafio
+Para a solução deste desafio foi construída uma aplicação fullstack com Next.JS para visualização das informações dos jogadores, registro de participação em eventos, controles de sincronização de dados com a API FOOTBALL e exportação de dados para a planilha do Google.
 
-To learn more about Next.js, take a look at the following resources:
+### Tutorial de utilização:
+Criamos um tutorial de utilização interativo, com detalhes sobre cada funcionalidade da aplicação:
+[https://app.storylane.io/share/d6dn3kutsw0u](https://app.storylane.io/share/d6dn3kutsw0u)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Stack Utilizada
+- Next.Js
+- Prisma ORM
+- ShadCN UI
+- Tailwind CSS
+- Chart.Js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Arquitetura
+A aplicação utiliza os conceitos mais recentes do Next.JS e do React.JS como:
 
-## Deploy on Vercel
+- Dynamic HTML Streaming
+- React Server Components
+- Server Actions
+- Caching
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<img src="https://github.com/djgoulart/desafio-football-tracker-backend/blob/17e5a49f0d3071313c8dc0023ac257347a679489/docs/sync.png" width="830" alt="processo de sincronização" />
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Requisitos de sistema
+
+* NodeJS 18+
+
+## Ambiente de produção
+
+A aplicação do backend está disponível de forma pública em: [https://desafio-football-tracker-frontend.onrender.com](https://desafio-football-tracker-frontend.onrender.com)
+
+## Ambiente de desenvolvimento local
+### Requisitos
+- O backend do projeto precisará estar rodando na sua máquina ou em um ambiente remoto.
+
+### Passo a passo: 
+- instale as dependências do projeto: ```npm install```
+- crie um arquivo ```.env``` na raiz do projeto utilizando como modelo o arquivo ```.env.example``` como modelo. Todas as variáveis são obrigatórias.
+- gere os arquivos do Prisma: ``` npx prisma generate ```
+- utilize o comando: ``npm run dev`` para inicializar a aplicação em modo desenvolvimento ou
+- utilize o comando ``npm run build`` e em seguida ``npm run start``para inicializar em modo de produção
