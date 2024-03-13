@@ -1,7 +1,7 @@
 
 # Desafio Football Tracker - Frontend
 
-O desafio consiste em desenvolver uma aplicação para gerenciar um programa de recompensas gamificado para um determinado público alvo. Nesse caso, os jogadores de futebol listados em uma API: [API-FOOTBALL](https://dashboard.api-football.com/). 
+O desafio consiste em desenvolver uma aplicação para gerenciar um programa de recompensas gamificado para um determinado público alvo. Nesse caso, os jogadores de futebol listados em uma API: [API-FOOTBALL](https://dashboard.api-football.com/).
 
 ### Cada Jogador recebe pontos com base em alguns critérios.
 - 1 ponto por cada ``GOL`` realizado na temporada (2020)
@@ -22,6 +22,7 @@ Os eventos presenciais serão registrados na aplicação que será construída.
 - [Google Sheet](https://docs.google.com/spreadsheets/d/1RgNmoyI4uJPZILHdnt6buvAPiqtVAOciJe1W7oMcSCM/edit?usp=sharing) Uma planilha do google para onde os dados são exportados.
 
 ## Solução do desafio
+<img src="https://github.com/djgoulart/desafio-football-tracker-frontend/blob/9b7f4483359b9a5c2e9f9dc3c18ef6a4403f8d91/docs/dashboard.png" width="830" alt="processo de sincronização" />
 Para a solução deste desafio foi construída uma aplicação fullstack com Next.JS para visualização das informações dos jogadores, registro de participação em eventos, controles de sincronização de dados com a API FOOTBALL e exportação de dados para a planilha do Google.
 
 ### Tutorial de utilização:
@@ -42,8 +43,6 @@ A aplicação utiliza os conceitos mais recentes do Next.JS e do React.JS como:
 - React Server Components
 - Server Actions
 - Caching
-
-<img src="https://github.com/djgoulart/desafio-football-tracker-backend/blob/17e5a49f0d3071313c8dc0023ac257347a679489/docs/sync.png" width="830" alt="processo de sincronização" />
 
 ## Requisitos de sistema
 
