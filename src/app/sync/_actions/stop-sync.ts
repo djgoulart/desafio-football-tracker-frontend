@@ -14,6 +14,8 @@ export async function stopSync(): Promise<StopSyncResponse> {
   })
 
   revalidatePath('/sync')
+  revalidatePath('/players')
+  revalidatePath('/dashboard')
 
   return await result.json()
 }
